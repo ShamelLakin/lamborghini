@@ -2,12 +2,8 @@ class  Lamborghini::Cars
   attr_accessor :name, :price, :engine, :url
 
   def self.now 
-  #return instances of Lamborghini's now 
-  puts <<-Doc.gsub /^\s*/, ''
-    1. Aventador  price  information 
-    2. Huracan  price  information 
-    Doc
-    
+    #scrape with Lamborghini and return information
+    based off that data
     car_1 = self.new 
     car_1.name = "Aventador" 
     car_1.price = "$417,826"

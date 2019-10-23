@@ -26,7 +26,8 @@ class Lamborghini::Cli
     
     input = gets.strip.downcase
     if input.to_1 >  0
-      puts @lambos[input.to_i -1]
+      new_car = @lambos[input.to_i -1] 
+      puts "#{i}. #{car.name} - #{car.price} - #{car.engine}"
        elsif input == "list"
         list_cars
        elsif input == "exit"
