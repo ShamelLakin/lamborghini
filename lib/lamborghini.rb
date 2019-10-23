@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+require 'pry'
 require_relative "lamborghini/version"
 require_relative './lamborghini/cli'
 require_relative './lamborghini/cars'

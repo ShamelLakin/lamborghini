@@ -1,20 +1,27 @@
 class  Lamborghini::Cars 
   attr_accessor :name, :price, :engine, :url
 
-  def self.now 
+  def self.now
+    
+    self.scrape_lambos
+  end 
+  
+  def self.scrape_lambos 
+   cars = []
+   cars << self.scrape_aventador
+   cars << self.scrape_huracan
+   
     #scrape with Lamborghini and return information
     based off that data
-    car_1 = self.new 
-    car_1.name = "Aventador" 
-    car_1.price = "$417,826"
-    car_1.engine
-    car_1.url = "https://www.lamborghini.com/en-en/models/aventador "
+    #go to www.lamborghini scrape
+    #instantiate and return info
     
-    car_2 = self.new 
-    car_2.name = "Huracan"
-    car_2.price = "$203,674"
-    car_2.engine 
-    car_2.url = "https://www.lamborghini.com/en-en/models/huracan"
+    
+    cars
   end 
 
+def self.scrape_aventador
+  doc = Nokogiri::HTML(open("https://www.lamborghini.com/en-en/models/huracan"))
+  binding.pry
+end 
 end 
