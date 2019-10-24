@@ -13,9 +13,9 @@ class Lamborghini::Cli
     # 1. Aventador  price  information 
     # 2. Huracan  price  information 
     # Doc
-    @lambos = Lamborghini::Cars.now
-    @lambos.each.with_index(1) do |car, i|
-      puts "#{i}. #{car.name} - #{car.price} - #{car.engine}"
+    @vehicle = Lamborghini::Cars.now
+    @vehicle.each.with_index(1) do |car, i|
+      puts "#{i}. #{car.name} - #{car.origin} - #{car.models} - #{car.future}"
     end
   end 
   
@@ -27,7 +27,7 @@ class Lamborghini::Cli
     input = gets.strip.downcase
     if input.to_1 >  0
       new_car = @lambos[input.to_i -1] 
-      puts "#{i}. #{car.name} - #{car.price} - #{car.engine}"
+      puts "#{i}. #{car.name} - #{car.origin} - #{car.models} - #{car.future}"
        elsif input == "list"
         list_cars
        elsif input == "exit"
@@ -39,7 +39,7 @@ class Lamborghini::Cli
   end 
   
   def addio 
-    "Goodbye Lambo Lover"
+    "Goodbye"
   end
     
 

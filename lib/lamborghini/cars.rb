@@ -1,27 +1,29 @@
 class  Lamborghini::Cars 
-  attr_accessor :name, :price, :engine, :url
+  attr_accessor :name, :origin, :models, :future, :url
 
   def self.now
     
-    self.scrape_lambos
+    self.scrape_cars
   end 
   
-  def self.scrape_lambos 
+  def self.scrape_cars 
    cars = []
-   cars << self.scrape_aventador
-   cars << self.scrape_huracan
+   cars << self.scrape_ferrari
+   cars << self.scrape_lamborghini
    
     #scrape with Lamborghini and return information
     based off that data
     #go to www.lamborghini scrape
-    #instantiate and return info
-    
+    #This is the tile code below
+    # title = doc.search("h1.b-headline__title").text.strip
     
     cars
   end 
 
-def self.scrape_aventador
-  doc = Nokogiri::HTML(open("https://www.lamborghini.com/en-en/models/huracan"))
+def self.scrape_ferrari
+  doc = Nokogiri::HTML(open("https://www.themanual.com/auto/ferrari-vs-lamborghini-comparison-history-fastest-cars/"))
+  name = doc.search("h1.b-headline__title").text.strip
+  origin = doc.search("p").text
   binding.pry
 end 
 end 
